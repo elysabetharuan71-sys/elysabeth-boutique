@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Buku Tamu - ELYSABETH FASHION</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+    .main-container {
+      display: flex;
+      gap: 30px;
+    }
+    .form-container {
+      flex: 1;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .form-container h2 {
+      margin-bottom: 20px;
+    }
+    .form-container input,
+    .form-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-container button {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .form-container button:hover {
+      background-color: #333;
+    }
+    .data-container {
+      flex: 2;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .data-container h3 {
+      margin-bottom: 20px;
+    }
+    .back-link {
+      margin-top: 20px;
+      display: inline-block;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <!-- Form Buku Tamu -->
+    <div class="form-container">
+      <h2>Form Buku Tamu</h2>
+      <form action="proses_bukutamu.php" method="post">
+        <label>Nama:</label>
+        <input type="text" name="nama" required>
+        <label>Email:</label>
+        <input type="email" name="email" required>
+        <label>Pesan:</label>
+        <textarea name="pesan" rows="4" required></textarea>
+        <button type="submit">Kirim</button>
+      </form>
+    </div>
+
+    <!-- Data Buku Tamu -->
+    <div class="data-container">
+      <h3>Daftar Tamu</h3>
+      <iframe src="datatamu.php" width="100%" height="400px" style="border:none;"></iframe>
+    </div>
+  </div>
+
+  <a href="Project1.htm" class="back-link">Kembali ke Beranda</a>
+</body>
+</html>

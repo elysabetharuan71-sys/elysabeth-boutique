@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Produk Fashion - ELYSABETH FASHION</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    .main-container {
+      display: flex;
+      gap: 30px;
+    }
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      flex: 3;
+    }
+    .product-card {
+      width: 250px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    .product-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 15px;
+    }
+    .product-title {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .product-price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #e63946;
+      margin-bottom: 10px;
+    }
+    .product-description {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    .product-variants {
+      margin: 10px 0;
+      font-size: 14px;
+    }
+    .buy-button {
+      background-color: #000;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .buy-button:hover {
+      background-color: #333;
+    }
+    .cart-container {
+      flex: 1;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      height: fit-content;
+    }
+    .cart-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    .cart-item-info {
+      flex: 2;
+    }
+    .cart-item-price {
+      flex: 1;
+      text-align: right;
+      font-weight: bold;
+    }
+    .cart-total {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: right;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    .checkout-button {
+      background-color: green;
+      color: white;
+      padding: 10px;
+      border: none;
+      width: 100%;
+      margin-top: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .checkout-button:hover {
+      background-color: darkgreen;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <!-- Produk -->
+    <div class="product-container">
+      <div class="product-card">
+        <img src="images/dress.jpeg" class="product-image">
+        <div class="product-info">
+          <h3 class="product-title">Dress Bangkok Premium</h3>
+          <p class="product-price">Rp 299.000</p>
+          <p class="product-description">Dress import langsung dari Bangkok dengan bahan katun premium.</p>
+          <div class="product-variants">
+            <p>Warna:
+              <select class="color-select">
+                <option>Merah</option>
+                <option>Hitam</option>
+                <option>Biru</option>
+              </select>
+            </p>
+            <p>Ukuran:
+              <select class="size-select">
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+              </select>
+            </p>
+          </div>
+          <button class="buy-button" onclick="addToCart('Dress Bangkok Premium', 299000, this)">Tambahkan Ke Keranjang</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/blouse.jpg" class="product-image">
+        <div class="product-info">
+          <h3 class="product-title">Blouse Wanita Trendy</h3>
+          <p class="product-price">Rp 249.000</p>
+          <p class="product-description">Blouse motif floral dengan bahan rayon yang adem.</p>
+          <div class="product-variants">
+            <p>Warna:
+              <select class="color-select">
+                <option>Putih</option>
+                <option>Pink</option>
+                <option>Kuning</option>
+              </select>
+            </p>
+            <p>Ukuran:
+              <select class="size-select">
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+              </select>
+            </p>
+          </div>
+          <button class="buy-button" onclick="addToCart('Blouse Wanita Trendy', 249000, this)">Tambahkan Ke Keranjang</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/stelan.jpg" class="product-image">
+        <div class="product-info">
+          <h3 class="product-title">Setelan Wanita Elegan</h3>
+          <p class="product-price">Rp 399.000</p>
+          <p class="product-description">Setelan atasan dan bawahan import kualitas terbaik.</p>
+          <div class="product-variants">
+            <p>Warna:
+              <select class="color-select">
+                <option>Hitam</option>
+                <option>Navy</option>
+                <option>Abu-abu</option>
+              </select>
+            </p>
+            <p>Ukuran:
+              <select class="size-select">
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+              </select>
+            </p>
+          </div>
+          <button class="buy-button" onclick="addToCart('Setelan Wanita Elegan', 399000, this)">Tambahkan Ke Keranjang</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Keranjang -->
+    <div class="cart-container" id="cartContainer">
+      <h2 class="cart-title">Keranjang Belanja</h2>
+      <div id="cartItems"></div>
+      <div class="cart-total" id="cartTotal">Total: Rp 0</div>
+
+      <form action="checkout.php" method="post" onsubmit="return prepareCheckout()">
+        <input type="hidden" name="cart_data" id="cartDataInput">
+        <button type="submit" class="checkout-button">Checkout Sekarang</button>
+      </form>
+    </div>
+  </div>
+
+  <a href="Project1.htm" class="back-link">Kembali ke Beranda</a>
+
+  <script>
+    let cart = [];
+    let total = 0;
+
+    function addToCart(productName, productPrice, buttonElement) {
+      const card = buttonElement.closest('.product-card');
+      const selectedColor = card.querySelector('.color-select').value;
+      const selectedSize = card.querySelector('.size-select').value;
+
+      cart.push({
+        name: productName,
+        price: productPrice,
+        color: selectedColor,
+        size: selectedSize
+      });
+
+      total += productPrice;
+      updateCartDisplay();
+
+      buttonElement.textContent = "Ditambahkan!";
+      setTimeout(() => {
+        buttonElement.textContent = "Tambahkan Ke Keranjang";
+      }, 2000);
+
+      localStorage.setItem('cartData', JSON.stringify(cart));
+    }
+
+    function updateCartDisplay() {
+      const cartItemsElement = document.getElementById('cartItems');
+      const cartTotalElement = document.getElementById('cartTotal');
+
+      cartItemsElement.innerHTML = '';
+      cart.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.className = 'cart-item';
+        itemElement.innerHTML = `
+          <div class="cart-item-info">
+            ${item.name}<br>
+            <small>Warna: ${item.color}, Ukuran: ${item.size}</small>
+          </div>
+          <div class="cart-item-price">
+            Rp ${item.price.toLocaleString()}
+          </div>
+        `;
+        cartItemsElement.appendChild(itemElement);
+      });
+
+      cartTotalElement.textContent = `Total: Rp ${total.toLocaleString()}`;
+      document.getElementById('cartDataInput').value = JSON.stringify(cart);
+    }
+
+    function prepareCheckout() {
+      document.getElementById('cartDataInput').value = JSON.stringify(cart);
+      return true;
+    }
+  </script>
+</body>
+</html>
